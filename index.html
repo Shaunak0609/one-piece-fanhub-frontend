@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>One Piece Fan Hub</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="logo">
+        <a href="index.html">☠️ One Piece Fan Hub</a>
+    </h1>      
+    <nav class="nav">
+      <a href="anime.html">Anime Tracker</a>
+      <a href="manga.html">Manga Tracker</a>
+      <a href="characters.html">Characters</a>
+      <a href="forums.html">Forums</a>
+      <a href="https://one-piece.com" target="_blank" rel="noreferrer">Official</a>
+      <a href="https://onepiece.fandom.com/wiki/One_Piece_Wiki" target="_blank" rel="noreferrer">Wiki</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Set sail into the world of One piece and follow the journey of the Strawhats</h2>
+      <p>Track your progress, explore characters, and join the discussion with fellow nakama.</p>
+      <div class="cta-row">
+        <a class="btn" href="anime.html">Track Anime</a>
+        <a class="btn" href="manga.html">Track Manga</a>
+        <a class="btn" href="characters.html">Meet the Crew</a>
+        <a class="btn" href="forums.html">Join Forums</a>
+      </div>
+    </section>
+
+    <section class="grid-2">
+      <div class="card">
+        <h3>Your Progress</h3>
+        <p>Last anime episode: <span id="homeAnimeEp">—</span></p>
+        <p>Last manga chapter: <span id="homeMangaCh">—</span></p>
+      </div>
+      <div class="card">
+        <h3>Quick Post</h3>
+        <div class="form-row">
+          <input id="qp-username" placeholder="Name (optional)" />
+        </div>
+        <div class="form-row">
+          <select id="qp-category">
+            <option value="general">General</option>
+            <option value="strawhats">Straw Hats</option>
+            <option value="villains">Villains</option>
+            <option value="marines">Marines</option>
+            <option value="theory">Theory</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <textarea id="qp-content" rows="3" placeholder="Share a thought..."></textarea>
+        </div>
+        <button class="btn" id="qp-post">Post</button>
+        <p id="qp-status" class="muted"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Fan site for educational/demo purposes. © Straw Hat Devs</p>
+  </footer>
+
+  <script src="js/config.example.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

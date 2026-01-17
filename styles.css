@@ -1,0 +1,172 @@
+@font-face {
+    font-family: 'OnePiece';
+    src: url(onepiecefont.ttf) format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Base theme */
+:root {
+  --bg: #0b0e12;
+  --card: #121720;
+  --text: #e6ecf2;
+  --muted: #a7b3c2;
+  --accent: #ffcc00;
+  --accent-2: #ff5050;
+  --link: #7fb3ff;
+  --ring: rgba(255, 204, 0, 0.35);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background-image: url("C:\\Users\\shaun\\Downloads\\Screenshot 2025-08-13 130749.png");
+  min-height: 100vh;
+}
+
+.logo a,
+.logo a:visited {
+  font-family: 'OnePiece' 'Pirata One', cursive;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.site-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px; position: sticky; top: 0; z-index: 10;
+  background: linear-gradient(180deg, rgba(11,14,18,0.9), rgba(11,14,18,0.6));
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-family: 'OnePiece'; font-size: 1rem;
+}
+
+.nav a {
+  color: var(--muted); text-decoration: none; margin-left: 14px; padding: 8px 10px; border-radius: 10px;
+}
+.nav a:hover, .nav a.active { background: rgba(255,255,255,0.06); color: var(--text); }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+.container.narrow { 
+    max-width: 700px; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: #141b24;
+    padding: 20px;
+    width: 500px;}
+
+.hero {
+  padding: 28px; background: linear-gradient(180deg, #141b24, #0f131a);
+  border-radius: 18px; border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  font-family: 'OnePiece'; font-size: 1.5rem;
+}
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+
+.btn {
+  appearance: none; border: none;
+  padding: 10px 14px; border-radius: 12px; cursor: pointer;
+  background: var(--accent); color: #1e1e1e; font-weight: 700;
+  box-shadow: 0 6px 16px rgba(255,204,0,0.25);
+}
+.btn:hover { filter: brightness(0.95); }
+.btn:active { transform: translateY(1px); }
+.btn.btn-ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); box-shadow: none; }
+
+.card {
+  padding: 18px; background: var(--card); border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+  font-family: 'OnePiece'; font-size: 1.5rem;
+}
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+@media (max-width: 900px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+
+.form-row { display: flex; gap: 10px; margin: 10px 0; }
+input, select, textarea {
+  width: 100%; padding: 10px 12px; background: #0c1118; color: var(--text);
+  border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; outline: none;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 6px var(--ring); }
+
+.muted { color: var(--muted); font-size: 0.9rem; }
+
+.footer { padding: 28px; text-align: center; color: var(--muted); }
+
+/* Tabs */
+.tabs { display: flex; gap: 8px; margin: 8px 0 12px; }
+.tab { background: transparent; border: 1px solid rgba(255,255,255,0.08); color: var(--text); padding: 8px 12px; border-radius: 10px; cursor: pointer; }
+.tab.active, .tab:hover { border-color: var(--accent); }
+.tab-panel { display: none; }
+.tab-panel.active { display: grid; }
+
+/* Characters */
+.character-card {
+  background: #0d121a; border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 14px; cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.character-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.35); }
+.character-portrait {
+  height: 120px; border-radius: 12px; margin-bottom: 8px;
+  background: linear-gradient(45deg, #1c2431, #121720);
+  position: relative; overflow: hidden;
+}
+/* simple visual tags per character (you can replace with images later) */
+.character-portrait.luffy::after { content: "🍖"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+.character-portrait.zoro::after { content: "⚔️"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+.character-portrait.nami::after { content: "🗺️"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+.character-portrait.usopp::after { content: "🎯"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+.character-portrait.sanji::after { content: "🔥"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+.character-portrait.chopper::after { content: "🩺"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+.character-portrait.robin::after { content: "📚"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+.character-portrait.franky::after { content: "🔧"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+.character-portrait.brook::after { content: "🎸"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+.character-portrait.jinbe::after { content: "🌊"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+.character-portrait.doflamingo::after { content: "🧵"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+.character-portrait.big.mom::after { content: "🎂"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+.character-portrait.kaido::after { content: "🐉"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+.character-portrait.blackbeard::after { content: "🌑"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+.character-portrait.garp::after { content: "👊"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+.character-portrait.akainu::after { content: "🌋"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+.character-portrait.kizaru::after { content: "🔦"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+.character-portrait.shanks::after { content: "⚔️"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+.character-portrait.law::after { content: "🩺"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+.character-portrait.rayleigh::after { content: "⚔️"; position: absolute; font-size: 64px; right: 10px; bottom: 10px; }
+
+
+.character-img {
+    display: block;
+    margin: 0 auto;        /* center horizontally */
+    max-width: 100%;       /* never overflow the box */
+    height: auto;          /* keep aspect ratio */
+    border-radius: 12px;   /* optional: rounded corners */
+}
+  
+
+/* click animation */
+.character-card.click-anim { animation: bounce 480ms ease; }
+@keyframes bounce {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.05); }
+  70% { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+
+/* Posts */
+.post-list { display: grid; gap: 16px; margin-top: 16px; }
+.post { background: var(--card); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 16px; }
+.post-header { display: flex; gap: 10px; justify-content: space-between; align-items: baseline; }
+.post-title { margin: 0; }
+.post-meta { color: var(--muted); font-size: 0.9rem; }
+.replies { margin-top: 10px; }
+.reply-form { display: flex; gap: 8px; margin-top: 10px; }
+.reply-list { display: grid; gap: 8px; margin-top: 10px; }
+.reply { padding: 10px; background: #0d121a; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; }
+.filters { display: flex; gap: 8px; align-items: center; margin-top: 18px; }

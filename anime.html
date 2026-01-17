@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Tracker — One Piece Fan Hub</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <header class="site-header">
+        <h1 class="logo">
+            <a href="index.html">☠️ One Piece Fan Hub</a>
+        </h1> 
+        <nav class="nav">
+          <a href="anime.html">Anime Tracker</a>
+          <a href="manga.html">Manga Tracker</a>
+          <a href="characters.html">Characters</a>
+          <a href="forums.html">Forums</a>
+          <a href="https://one-piece.com" target="_blank" rel="noreferrer">Official</a>
+          <a href="https://onepiece.fandom.com/wiki/One_Piece_Wiki" target="_blank" rel="noreferrer">Wiki</a>
+        </nav>
+    </header>
+
+  <main class="container narrow">
+    <h2>Anime Progress</h2>
+    <div class="card">
+      <label>Current Episode</label>
+      <div class="form-row">
+        <input id="animeEpisode" type="number" min="1" step="1" placeholder="e.g., 1120"/>
+        <button id="updateAnimeBtn" class="btn">Save</button>
+        <button id="animePlus" class="btn btn-ghost">+1</button>
+      </div>
+      <p class="muted">Saved to your browser. Not shared with anyone.</p>
+    </div>
+  </main>
+
+  <script src="js/tracker.js"></script>
+</body>
+</html>

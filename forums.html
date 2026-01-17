@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forums — One Piece Fan Hub</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <header class="site-header">
+        <h1 class="logo">
+            <a href="index.html">☠️ One Piece Fan Hub</a>
+        </h1> 
+        <nav class="nav">
+          <a href="anime.html">Anime Tracker</a>
+          <a href="manga.html">Manga Tracker</a>
+          <a href="characters.html">Characters</a>
+          <a href="forums.html">Forums</a>
+          <a href="https://one-piece.com" target="_blank" rel="noreferrer">Official</a>
+          <a href="https://onepiece.fandom.com/wiki/One_Piece_Wiki" target="_blank" rel="noreferrer">Wiki</a>
+        </nav>
+    </header>
+
+  <main class="container">
+    <h2>Discussion Forums</h2>
+    <div class="card">
+      <div class="grid-3">
+        <div class="form-row">
+          <input id="username" placeholder="Name (optional)" />
+        </div>
+        <div class="form-row">
+          <select id="category">
+            <option value="general">General</option>
+            <option value="strawhats">Straw Hats</option>
+            <option value="villains">Villains</option>
+            <option value="marines">Marines</option>
+            <option value="other-characters">Other Characters</option>
+            <option value="theory">Theory</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <input id="title" placeholder="Post title"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <textarea id="content" rows="4" placeholder="Write your post... (no spoilers without tags!)"></textarea>
+      </div>
+      <button id="postBtn" class="btn">Post</button>
+      <p id="postStatus" class="muted"></p>
+    </div>
+
+    <div class="filters">
+      <label>Filter:</label>
+      <select id="filterCategory">
+        <option value="all">All</option>
+        <option value="general">General</option>
+        <option value="strawhats">Straw Hats</option>
+        <option value="villains">Villains</option>
+        <option value="marines">Marines</option>
+        <option value="other-characters">Other Characters</option>
+        <option value="theory">Theory</option>
+      </select>
+    </div>
+    
+
+    <div id="forumPosts" class="post-list"></div>
+  </main>
+
+  <template id="postItemTemplate">
+    <article class="post">
+      <header class="post-header">
+        <h3 class="post-title"></h3>
+        <div class="post-meta"></div>
+      </header>
+      <p class="post-content"></p>
+      <details class="replies">
+        <summary>Replies</summary>
+        <div class="reply-list"></div>
+        <div class="reply-form">
+          <input class="reply-username" placeholder="Name (optional)"/>
+          <input class="reply-content" placeholder="Write a reply..."/>
+          <button class="btn reply-send">Reply</button>
+        </div>
+      </details>
+    </article>
+  </template>
+
+  <script src="js/config.example.js"></script>
+  <script src="js/forum.js"></script>
+</body>
+</html>
